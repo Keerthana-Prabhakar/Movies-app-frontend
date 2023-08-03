@@ -19,15 +19,17 @@ const MovieDetails = () => {
             .catch(e => console.log(e));
         };
     return (
-    <div>
+        <div className="bg-blue-200 ">
         {error && <p style={{"color":"Green"}}>{error}</p>}
         {movie && (
             <>
-        <h2>{movie.title}</h2>
-        <p>Director: {movie.director}</p>
-        <p>Year: {movie.year}</p>
-        <Link to={`/movies/${id}/update`}>Update Movie</Link>
-        <button onClick={handleDelete}>Delete Movie</button>
+                
+        <h2 className= " bg-yellow-200 flex flex-col space-x-5;">{movie.title}</h2>
+        <p className= " flex flex-col space-x-5;">Director: {movie.director}</p>
+        <p className= " flex flex-row space-x-5;">Year: {movie.year}</p>
+        <p className= " flex flex-row space-x-5;">Poster: {movie.poster}</p>
+        <Link className="border border-gray-200 bg-gray-200 text-gray-700 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-300 focus:outline-none focus:shadow-outline" to={`/movies/${id}/update`}>Update Movie</Link>
+        <button className="border border-gray-200 bg-gray-200 text-gray-700 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-300 focus:outline-none focus:shadow-outline" onClick={handleDelete}>Delete Movie</button>
         </>
         )}
 </div>

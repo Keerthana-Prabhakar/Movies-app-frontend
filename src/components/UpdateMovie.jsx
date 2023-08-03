@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 const UpdateMovie = () => {
-  const { id } = useParams();
-  const navigate = useNavigate();
+const { id } = useParams();
+const navigate = useNavigate();
   const [movie, setMovie] = useState();
   useEffect(() => {
     axios
@@ -28,11 +28,11 @@ const UpdateMovie = () => {
 
   };
   return (
-    <div>
+    <div className="bg-yellow-100">
       <h2>Update movie</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="">Title</label>
-        <input
+        <input className= " flex flex-row space-x-5;"
           type="text"
           name="title"
           value={movie?.title || ''}
@@ -40,10 +40,12 @@ const UpdateMovie = () => {
           required
         />
         <label htmlFor="">Director</label>
-        <input type="text" name="author" value={movie?.director || ''} onChange={handleChange} />
+        <input className= " flex flex-row space-x-5;" type="text" name="director" value={movie?.director || ''} onChange={handleChange} />
         <label htmlFor="">Year</label>
-        <input type="text" name="year" value={movie?.year || ''} onChange={handleChange} />
-        <button>Update Movie</button>
+        <input className= " flex flex-row space-x-5;" type="text" name="year" value={movie?.year || ''} onChange={handleChange} />
+        <label htmlFor="">Poster</label>
+        <input className= " flex flex-row space-x-5;" type="text" name="poster" value={movie?.poster || ''} onChange={handleChange} />
+        <button className="border border-gray-200 bg-gray-200 text-gray-700 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-300 focus:outline-none focus:shadow-outline">Update Movie</button>
       </form>
     </div>
   );

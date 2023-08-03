@@ -4,9 +4,11 @@ import NewMovie from './NewMovie';
 import MovieDetails from './MovieDetails';
 import UpdateMovie from './UpdateMovie';
 
+
 const Main = () => {
     return (
         <main>
+        
             <Routes>
                 <Route path="/" element={<Movies />} />
                 <Route path="/movies/new" element={<NewMovie />} />
